@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #f8fafc;
+}
+
+.hero-banner img {
+  width: 100%;      /* Cho ảnh fill toàn bộ chiều ngang web */
+  height: auto;     /* Giữ đúng tỉ lệ, không bị méo */
+  display: block;   /* Xóa khoảng trắng dư thừa dưới ảnh */
+}
+
+
+
+
+/* Card kết quả */
+.result-card {
+  transition: all 0.3s ease;
+}
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulse animation */
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* === Tinh chỉnh tương tác chọn đáp án nhưng KHÔNG đổi script.js === */
+/* 1) Ẩn icon vòng tròn do script render */
+#options > div > div:first-child {
+  display: none !important;
+}
+
+/* 2) Đổi màu highlight từ xanh dương sang xanh lá (override Tailwind classes) */
+#options > div.border-blue-500 {
+  border-color: #16a34a !important; /* green-600 */
+}
+#options > div.bg-blue-50 {
+  background-color: #dcfce7 !important; /* green-100 */
+}
+#options > div:hover {
+  background-color: #f0fdf4 !important; /* green-50 */
+}
+
+/* (Tuỳ chọn) chữ trong option rõ hơn khi được chọn */
+#options > div.border-blue-500 span {
+  color: #064e3b; /* green-900 */
+  font-weight: 600;
+}
+/* Container */
+.logo-slider {
+  overflow: hidden;
+  background: #f8fafc; /* màu nền đồng bộ với web */
+  padding: 20px 0;
+}
+
+/* Track chạy ngang */
+.logo-track {
+  display: flex;
+  width: calc(250px * 10); /* 8 item = 4 gốc + 4 lặp */
+  animation: scroll 20s linear infinite;
+}
+
+/* Logo + Tên */
+.logo-item {
+  display: flex;
+  flex-direction: column; /* logo trên, chữ dưới */
+  align-items: center;
+  margin: 0 40px;
+}
+
+.logo-item img {
+  height: 150px;
+  max-width: 220px; 
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-90%);
+  }
+}
+.logo-slider-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.logo-slider-section p {
+  font-size: 1rem;
+  color: #4b5563; /* gray-600 */
+}
