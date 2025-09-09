@@ -65,7 +65,7 @@ body {
 /* Track chạy ngang */
 .logo-track {
   display: flex;
-  width: calc(250px * 10); /* 8 item = 4 gốc + 4 lặp */
+  width: calc(250px * 14); /* 8 item = 4 gốc + 4 lặp */
   animation: scroll 20s linear infinite;
 }
 
